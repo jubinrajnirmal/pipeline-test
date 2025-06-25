@@ -1,5 +1,9 @@
 pipeline{
-    agent any
+    agent {label "aero"}
+
+    trgiggers {
+        cron('0 3 * * 1-5')
+    }
   
     stages {
         stage('SCM'){

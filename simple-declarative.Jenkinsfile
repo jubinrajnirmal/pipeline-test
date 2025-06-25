@@ -1,7 +1,7 @@
 pipeline{
     agent {label "aero"}
 
-    trgiggers {
+    triggers {
         cron('0 3 * * 1-5')
     }
   

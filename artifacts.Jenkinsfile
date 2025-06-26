@@ -16,9 +16,9 @@ pipeline{
             }
         }
     }
-     post {
-            always {
-                archiveArtifacts artifacts: ARTIFACT_SOURCE_DIRECTORY, followSymlinks: false
-            }
+    post{
+        always {
+            archiveArtifacts artifacts: ARTIFACT_SOURCE_DIRECTORY, followSymlinks: false
         }
+    }
 }

@@ -12,8 +12,8 @@ pipeline{
         stage('test'){
             steps{
                 echo "Executing Tests"
-                sh "mkdir -p tests && echo 'Test results' > tests/test-results.txt"
-            }
+                sh "mkdir -p tests && echo 'Test results' > tests/test-results.xml"
+                error "broken test break the build"
         }
     }
     post{

@@ -11,7 +11,7 @@ pipeline{
     stages {
         stage('SCM'){
             steps{
-                git branch: 'main', url: 'https://github.com/jubinrajnirmal/pipeline-test.git'
+                git branch: "${params.branch}", url: 'https://github.com/jubinrajnirmal/pipeline-test.git'
             }    
         }
         stage('Package'){

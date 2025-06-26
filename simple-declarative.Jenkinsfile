@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Performing static analysis'
                 script {
-                    input message: "Have you completed the static analysis and that has resulted in no high or critical issues?", 
+                    input message: "Have you completed the static analysis and that has resulted in no high or critical issues??", 
                           ok: "Yes, I have completed it"
                 }
             }

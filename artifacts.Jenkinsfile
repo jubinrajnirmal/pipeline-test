@@ -18,7 +18,7 @@ pipeline{
     }
      post {
             always {
-                archiveArtifacts artifacts: 'ARTIFACT_SOURCE_DIRECTORY', followSymlinks: false
+                archiveArtifacts artifacts: ARTIFACT_SOURCE_DIRECTORY, followSymlinks: false
             }
         }
 }

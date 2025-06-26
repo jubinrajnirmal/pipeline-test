@@ -5,8 +5,19 @@
                 steps {
                     echo 'Performing static analysis'
                     script {
-                        input message: "Have you completed the static analysis and that has resulted in no high or critical issues??", 
-                            ok: "Yes, I have completed it"
+                        def number = input (
+                            message: "Have you completed the static analysis and that has resulted in no high or critical issues??", 
+                            parameters: [
+                                string(name: 'Value', description: 'Enter a value equally divisble by three.')
+                            ]
+                        )
+                    def num = number.toInteger()
+
+                    if (num % 3 == 0) {
+                        echo "Divisible by 3"
+                    }else{
+                        error "Not divisible by 3"
+                    }    
                     }
                 }
             }

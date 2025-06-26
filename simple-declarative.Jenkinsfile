@@ -4,9 +4,7 @@ pipeline{
     parameters {
         string(name: 'branch', defaultValue: 'main', description: 'Branch to fetch for pipeline')
     }
-    triggers {
-        cron('0 3 * * 1-5')
-    }
+
   
     stages {
         stage('SCM'){
@@ -15,11 +13,8 @@ pipeline{
             }    
         }
         stage('Package'){
-            when{
-                expression {
-                    return params.brach == 'release'
-                }
-            }
+             
+            
             steps{
                 echo 'Packaging the code'
             }

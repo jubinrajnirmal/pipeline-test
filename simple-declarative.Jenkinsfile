@@ -11,5 +11,15 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/jubinrajnirmal/pipeline-test.git'
             }    
         }
+        stage('Package'){
+            when{
+                expression {
+                    return params.brach == 'release'
+                }
+            }
+            steps{
+                echo 'Packaging the code'
+            }
+        }
     }
 }

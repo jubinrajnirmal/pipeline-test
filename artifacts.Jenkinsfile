@@ -3,7 +3,7 @@ pipeline{
     environment {
         ARTIFACT_SOURCE_DIRECTORY = 'tests/*.xml'
     }
-    stages{
+    stages  {
         stage('Build'){
             steps{
                 echo 'Build the code'
@@ -14,7 +14,7 @@ pipeline{
                 echo "Executing Tests"
                 sh "mkdir -p tests && echo 'Test results' > tests/test-results.xml"
                 error "broken test break the build"
-        }
+        }   }
     }
     post{
         always {

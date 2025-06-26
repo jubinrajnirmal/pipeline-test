@@ -15,10 +15,10 @@ pipeline{
                 sh "mkdir -p tests && echo 'Test results' > tests/test-results.txt"
             }
         }
-        post {
+    }
+     post {
             always {
                 archiveArtifacts artifacts: 'ARTIFACT_SOURCE_DIRECTORY', followSymlinks: false
             }
         }
-    }
 }
